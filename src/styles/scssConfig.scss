@@ -1,0 +1,27 @@
+$main-color:#344a5f;
+// 定义指令
+@mixin webkit($type, $value){
+    -webkit-#{$type}: $value;
+    -moz-#{$type}: $value;
+    -o-#{$type}: $value;
+    -ms-#{$type}: $value;
+    #{$type}: $value;
+}
+@mixin webkitA($type, $value) {  // A => after
+    #{$type}: -webkit-#{$value};
+    #{$type}: -moz-#{$value};
+    #{$type}: -ms-#{$value};
+    #{$type}: -o-#{$value};
+    #{$type}: $value;
+}
+/*清除浮动*/
+%clearfix {
+    *zoom: 1;
+    &:before, &:after {
+      content: " ";
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
+  } 
